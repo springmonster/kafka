@@ -56,7 +56,7 @@ public interface Selectable {
      * Queue the given request for sending in the subsequent {@link #poll(long) poll()} calls
      * @param send The request to send
      */
-    public void send(Send send);
+    void send(Send send);
 
     /**
      * Do I/O. Reads, writes, connection establishment, etc.

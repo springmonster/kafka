@@ -70,7 +70,7 @@ public interface KafkaClient extends Closeable {
      * @param request The request
      * @param now The current timestamp
      */
-    public void send(ClientRequest request, long now);
+    void send(ClientRequest request, long now);
 
     /**
      * Do actual reads and writes from sockets.

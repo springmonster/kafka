@@ -3,9 +3,9 @@
  * file distributed with this work for additional information regarding copyright ownership. The ASF licenses this file
  * to You under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the
  * License. You may obtain a copy of the License at
- * 
+ *
  * http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on
  * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the
  * specific language governing permissions and limitations under the License.
@@ -27,6 +27,7 @@ import java.util.Set;
 /**
  * A representation of a subset of the nodes, topics, and partitions in the Kafka cluster.
  */
+// TODO: 2023/12/5 获取集群信息
 public final class Cluster {
 
     private final boolean isBootstrapConfigured;
@@ -142,7 +143,7 @@ public final class Cluster {
     public List<Node> nodes() {
         return this.nodes;
     }
-    
+
     /**
      * Get the node by the node id (or null if no such node exists)
      * @param id The id of the node
@@ -179,6 +180,7 @@ public final class Cluster {
      * @param topic The topic name
      * @return A list of partitions
      */
+    // TODO: 2023/12/5 获取指定topic的分区信息，Producer.send()方法中会调用
     public List<PartitionInfo> partitionsForTopic(String topic) {
         return this.partitionsByTopic.get(topic);
     }
